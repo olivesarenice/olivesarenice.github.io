@@ -1,5 +1,6 @@
 ---
 layout: page
+icon: fas fa-lightbulb
 ---
 
 # Journal Log 
