@@ -5,5 +5,5 @@
 <figcaption style="text-align: center; font-size:90%;">{{ include.caption }}</figcaption>
 </figure>
 {% else %}
-<img src="/assets/img/posts/{{ imagePath }}" alt="" {% endif %} {% if include.width %} width="{{ include.width }}" {% endif %}/>
+<img src="/assets/img/posts/{{ imagePath }}" alt="" {% if include.width %} width="{{ include.width }}" {% endif %}/>
 {% endif %}
