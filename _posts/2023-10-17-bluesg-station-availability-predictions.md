@@ -278,7 +278,7 @@ The current state of all other stations gives much more information about statio
 
 I forgot to save an image of the prediction vs. actual overlays so you'll have to trust me that it was bad.
 
-# Further Research
+## Further Research
 
 I asked a local Data Science group for recommendations on what else I could do to get better model results:
 
@@ -290,7 +290,7 @@ I asked a local Data Science group for recommendations on what else I could do t
 
 > Aggregate the data. Instead of predicting on 5 minute intervals, try predicting hourly intervals.
 
-The one that makes the most sense to me is to simplify this into a binary classification problem and use a simpler model like RF on it. I believe it will come down to proper feature engineering, as the station-specific data is too random to be useful on its own.
+The one that makes the most sense to me is to simplify this into a binary classification problem and use a simpler model like RF on it. I believe it will come down to proper feature engineering, as the station-specific data is too random to be useful on its own. But 
 
 As for the database management, I am looking at time-series databases like Influx which are more optimised and uses less storage. I cover the usage of InfluxDB as a database for another PoC project (link coming soon) which combined StockTwits sentiment data and actual prices for various cryptocurrencies.
 
