@@ -229,4 +229,7 @@ This is my first time building a public product, and it has not been formally la
 
 More importantly, I also learned how to deploy dashboards via cloud while maintaining security with proper authentication in the public domain.
 
+<br>
+<br>
+
 *That's all for tonight, ciao.*
