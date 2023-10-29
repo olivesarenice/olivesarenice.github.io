@@ -228,9 +228,11 @@ We can also dynamically generate strings based on functions and then pass them t
 
 To generate the `href` to our `main.css` file rather than hardcoding it, we can use:
 
+{% raw %}
     href="{{ url_for('static',filename='css/main.css') }}"
+{% endraw %}
 
-`{{ variable }}` turns anything inside it into a string.
+{% raw %}`{{ variable }}`{% endraw %} turns anything inside it into a string.
 
 `url_for` is a built-in Flask function that generates a URL to a specified `app` endpoint along with parameters for that endpoint (if required). 
 
