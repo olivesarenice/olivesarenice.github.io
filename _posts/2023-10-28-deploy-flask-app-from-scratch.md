@@ -203,6 +203,7 @@ Our `index` page (and any other pages) will inherit its structure from the `base
 
 The parent `base.html` contains boilerplate HTML with 2 dynamically generated/ templatized items:
 
+{% raw %}
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -212,15 +213,15 @@ The parent `base.html` contains boilerplate HTML with 2 dynamically generated/ t
         <title>My Website</title>
         <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}">
         <link rel="icon" href="./favicon.ico" type="image/x-icon">
-        {% raw %}{% block head %}{% endblock %}{% endraw %}
+        {% block head %}{% endblock %}
     </head>
     <body>
-        {% raw %}{% block body %}{% endblock %}{% endraw %}
-    </body>
+        {% block body %}{% endblock %}
     </html>
+{% endraw %}
 
 1. Dynamic Blocks
-Wherever we want to add content, we can use `{% block BLOCK_NAME %}` followed by `{% endblock %}`. We will reference them in child templates later.
+Wherever we want to add content, we can use {% raw %}`{% block BLOCK_NAME %}`{% endraw %} followed by {% raw %}`{% endblock %}`{% endraw %}. We will reference them in child templates later.
 
 2. Dynamic strings
 We can also dynamically generate strings based on functions and then pass them to HTML.
@@ -247,16 +248,15 @@ i.e. accessing static endpoint will return the string `/static/<filename>` where
 
 Now create the child template `index.html` to reference the template `base.html`
 
-
-    {% raw %}{% extends 'base.html'%}{% endraw %}  // use base.html as the template
-
-    {% raw %}{% block head %}{% endraw %} // define the content for the 'head' block
+{% raw %}
+    {% extends 'base.html'%} // use base.html as the template
+    {% block head %} // define the content for the 'head' block
     <h1> Some Header... </h1>
-    {% raw %}{% endblock %}{% endraw %} 
-
-    {% raw %}{% block body %}{% endraw %} // define the content for the 'body' block
+    {% endblock %} 
+    {% block body %} // define the content for the 'body' block
     Some text
-    {% raw %}{% endblock %}{% endraw %}
+    {% endblock %}
+{% endraw %}
 
 ### Databases
 
