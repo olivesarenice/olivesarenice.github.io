@@ -232,8 +232,6 @@ To generate the `href` to our `main.css` file rather than hardcoding it, we can 
     href="{{ url_for('static',filename='css/main.css') }}"
 {% endraw %}
 
-{% raw %}`{{ variable }}`{% endraw %} turns anything inside it into a string.
-
 `url_for` is a built-in Flask function that generates a URL to a specified `app` endpoint along with parameters for that endpoint (if required). 
 
 But wait, we didn't specify `/static` as an endpoint in `app.py`, how does it know this endpoint?
@@ -319,8 +317,6 @@ Inside `app.py`, the code should look like this:
 
         with app.app_context():
             db.create_all()
-
-    
 
 Note that `db.Model` needs to be specified **before** the database creation, otherwise no tables will be created. See this [issue](https://stackoverflow.com/questions/74171824/db-create-all-doesnt-create-a-database-in-a-desired-directory).
 
