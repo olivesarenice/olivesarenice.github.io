@@ -191,7 +191,7 @@ As part of the framework, Flask uses jinja2 templating engine which allows us to
 
 Jinja2 syntax allows us to:
 - create a base template and have other pages inherit from this template.
-- dynamically replace content using template syntax like `{{ this_thing_will_be_turned_into_a_string }}` and other control logic
+- dynamically replace content using template syntax like {% raw %}`{{ this_thing_will_be_turned_into_a_string }}`{% endraw %} and other control logic
 
 ### Steps
 
@@ -212,10 +212,10 @@ The parent `base.html` contains boilerplate HTML with 2 dynamically generated/ t
         <title>My Website</title>
         <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}">
         <link rel="icon" href="./favicon.ico" type="image/x-icon">
-        {% block head %}{% endblock %}
+        {% raw %}{% block head %}{% endblock %}{% endraw %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% raw %}{% block body %}{% endblock %}{% endraw %}
     </body>
     </html>
 
@@ -247,15 +247,16 @@ i.e. accessing static endpoint will return the string `/static/<filename>` where
 
 Now create the child template `index.html` to reference the template `base.html`
 
-    {% extends 'base.html'%}  // use base.html as the template
 
-    {% block head %} // define the content for the 'head' block
+    {% raw %}{% extends 'base.html'%}{% endraw %}  // use base.html as the template
+
+    {% raw %}{% block head %}{% endraw %} // define the content for the 'head' block
     <h1> Some Header... </h1>
-    {% endblock %} 
+    {% raw %}{% endblock %}{% endraw %} 
 
-    {% block body %} // define the content for the 'body' block
+    {% raw %}{% block body %}{% endraw %} // define the content for the 'body' block
     Some text
-    {% endblock %}
+    {% raw %}{% endblock %}{% endraw %}
 
 ### Databases
 
