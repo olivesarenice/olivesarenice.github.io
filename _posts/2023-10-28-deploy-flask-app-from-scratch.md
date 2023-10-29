@@ -296,7 +296,7 @@ Inside `app.py`, the code should look like this:
         db.create_all()
 
     ######## REST OF THE APP ########
-    ...
+    
 
 1. Tell the app that we want to add a sqlite db resource
 
@@ -324,7 +324,7 @@ Note that `db.Model` needs to be specified **before** the database creation, oth
 
 After understanding the HTML template setup and database initialisation stage, building the rest of the app depends very much on basic Python coding.
 
-This portion is better understood through the [video tutorial]() as it builds the code incrementally. As my purpose is to note down the conceptual parts of Flask components, I won't go into the code logic here.
+This portion is better understood through the [video tutorial](https://www.youtube.com/watch?v=Z1RJmh_OqeA) as it builds the code incrementally. As my purpose is to note down the conceptual parts of Flask components, I won't go into the code logic here.
 
 ## Deployment
 
