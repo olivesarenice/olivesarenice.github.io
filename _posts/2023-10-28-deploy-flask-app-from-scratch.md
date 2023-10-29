@@ -191,7 +191,7 @@ As part of the framework, Flask uses jinja2 templating engine which allows us to
 
 Jinja2 syntax allows us to:
 - create a base template and have other pages inherit from this template.
-- dynamically replace content using template syntax like `{{ this_thing_will_be_turned_into_a_string }}` and control logic `{% do_this_function %}`
+- dynamically replace content using template syntax like `{{ this_thing_will_be_turned_into_a_string }}` and other control logic
 
 ### Steps
 
