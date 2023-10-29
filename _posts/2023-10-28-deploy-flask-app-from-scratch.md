@@ -8,7 +8,9 @@ category: projects
 
 ## Summary
 
-This is how I learned to write and deploy a basic Flask app (almost) for free on [Digital Ocean](https://www.digitalocean.com/)'s App Platform
+This is how I learned to write and deploy a basic Flask app (almost) for free on [Digital Ocean](https://www.digitalocean.com/)'s App Platform.
+
+The live app can be found at: https://monkfish-app-cjxym.ondigitalocean.app/
 
 In this writeup, I cover the components and concepts of a Flask app, and the options for deploying them outside of self-hosting.
 
