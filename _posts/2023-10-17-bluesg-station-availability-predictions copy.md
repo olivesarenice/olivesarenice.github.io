@@ -1,6 +1,6 @@
 ---
 title: BlueSG Station Availability Predictions
-tag: scraping, pi
+tag: [web-scraping, pi]
 category: data analysis
 ---
 

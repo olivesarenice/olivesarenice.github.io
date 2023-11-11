@@ -1,6 +1,6 @@
 ---
 title: pg-scrape writeup
-tag: webscraping
+tag: web-scraping
 category: projects
 ---
 

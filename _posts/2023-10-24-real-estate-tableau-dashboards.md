@@ -1,6 +1,6 @@
 ---
 title: Real Estate Tableau Dashboards
-tag: tableau, data-analysis
+tag: [tableau, data-analysis]
 category: projects
 ---
 

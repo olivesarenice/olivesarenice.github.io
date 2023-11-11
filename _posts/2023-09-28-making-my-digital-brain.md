@@ -1,6 +1,6 @@
 ---
 title: Making my digital brain
-tag: 
+tag: others
 category: others
 ---
 
