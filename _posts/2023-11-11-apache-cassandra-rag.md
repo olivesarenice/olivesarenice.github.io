@@ -6,7 +6,7 @@ category: learning
 
 # Summary
 
-In this post I cover my learnings from attending the recent AI Camp workshop where amongst other sharings, I learned how to utilise Apache Cassandra via [Datastax](), a cloud platform, to run a chatbot powered by Retrieval Augmented Generation (RAG).
+In this post I cover my learnings from attending the recent AI Camp workshop where amongst other sharings, I learned how to utilise Apache Cassandra via [Datastax](https://www.datastax.com/), a cloud platform, to run a chatbot powered by Retrieval Augmented Generation (RAG).
 
 It follows the tutorial from [Retrieval Augmented Generation for AI Chatbots](https://colab.research.google.com/github/awesome-astra/docs/blob/main/docs/pages/tools/notebooks/Retrieval_Augmented_Generation_(for_AI_Chatbots).ipynb) in the [Datastax Docs](https://docs.datastax.com/en/astra-serverless/docs/vector-search/examples.html)
 
@@ -178,7 +178,7 @@ There are 3 types of databases covered in [this article](https://scaleyourapp.co
 
 - **column-family (or wide-column) based**
 
-    {% include img-wrap name="wide-column" caption="Wide Column Stores" %}
+    {% include img-wrap name="wide-column.png" caption="Wide Column Stores" %}
 
     Rows can have column families which contain any number of columns. Rows do not have to have the same columns. If a column is queried on a row which does not have that column, it simply returns `NULL` rather than throwing an error.
 
