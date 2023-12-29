@@ -347,33 +347,32 @@ This ties in with the ETL/ ELT terminology, where ETL/ELT describes what happens
 
 My personal example (1): <br> ETL of time-series sensor data and batch quality data for control tower dashboard.
 
-    1. Business requirement
+1. Business requirement
 
-        Need for a dashboard which aggregated data from various parts of the business, including SAP, manufacturing equipment, lab testing software.
+    Need for a dashboard which aggregated data from various parts of the business, including SAP, manufacturing equipment, lab testing software.
 
-    2. Data sources:
+2. Data sources:
 
-        - Tabular product quality/ transaction data from Azure Cloud Database.
+    - Tabular product quality/ transaction data from Azure Cloud Database.
 
-        - Time-series sensor streams stored in InfluxDB, along with timestamp manufacturing metadata in on-prem SQL Server tables. 80+ sensors over 10 years (1000s of manufacturing batches)
+    - Time-series sensor streams stored in InfluxDB, along with timestamp manufacturing metadata in on-prem SQL Server tables. 80+ sensors over 10 years (1000s of manufacturing batches)
 
-        - Experimental testing data from on-prem Oracle database of our Lab Information System (LIMS) (~20GB of data spread across multiple tables)
+    - Experimental testing data from on-prem Oracle database of our Lab Information System (LIMS) (~20GB of data spread across multiple tables)
 
-    3. Business logic:
+3. Business logic:
 
-        All data belongs to individual `production_batch`, which are categorised by their `product_type`. We want to analyse and display the product quality, sensor data, and testing data, by `production_batch`.
+    All data belongs to individual `production_batch`, which are categorised by their `product_type`. We want to analyse and display the product quality, sensor data, and testing data, by `production_batch`.
 
-        - Tabular product quality data from Azure:
-        
-        Connection to 
+    - Tabular product quality data from Azure:
+    
 
-        - Time-series sensor streams:
+    - Time-series sensor streams:
 
         Used the associated metadata in SQL Server to get the start and end times for each `production_batch`, then query Influx with these time-ranges to get relevant time-series.
 
         Downsampled time-series from millisecond precision to 1 min for dashboard display.
 
-        - Experimental testing data:
+    - Experimental testing data:
 
         Oracle DB is used for system operation OLTP, **not** meant for OLAP.
 
@@ -383,7 +382,7 @@ My personal example (1): <br> ETL of time-series sensor data and batch quality d
 
         Delta load based on record's timestamp. Loaded via `INSERT FROM TEMP` table to allow insert in batches.
 
-        - Transaction data from Azure: 
+    - Transaction data from Azure: 
 
         Source had no PK, index, or timestamp for deltaload. IDs are non-consecutive.
 
@@ -393,19 +392,19 @@ My personal example (1): <br> ETL of time-series sensor data and batch quality d
         
         Range is dynamically determined to ensure load sizes are always ~ 5000 rows to prevent Azure timeout.
 
-    4. Destination:
+4. Destination:
 
-        All transformed data was stored in an on-prem SQL Server database meant for warehousing purposes. 
-        
-        Within the warehouse, tables were stored with appropriate indexing for their queries - e.g. indexed on `product_name` for quick filtering.
+    All transformed data was stored in an on-prem SQL Server database meant for warehousing purposes. 
+    
+    Within the warehouse, tables were stored with appropriate indexing for their queries - e.g. indexed on `product_name` for quick filtering.
 
-        Views created on common table aggregations, allows users to extend their own queries more easily.
+    Views created on common table aggregations, allows users to extend their own queries more easily.
 
-    5. Scheduling:
+5. Scheduling:
 
-        All jobs ran daily on in-house parallel task orchestrator (used k8s). Scheduler is `cron` based.
-        
-        Used Grafana to monitor health of tasks and data consistency (e.g. number of rows present vs. written)
+    All jobs ran daily on in-house parallel task orchestrator (used k8s). Scheduler is `cron` based.
+    
+    Used Grafana to monitor health of tasks and data consistency (e.g. number of rows present vs. written)
 
 ***How would you approach the design of a datawarehouse?***
 
@@ -476,8 +475,93 @@ Assuming this question is open-ended with no business context, first clarify if 
     - Maintain documentation
 
 
-## To do
+## Notes after interview
+
+EDIT: I just completed the interview - unlikely to get to the next round. Here's some thoughts.
+
+He asked 2 questions:
+
+1. Share your experience at work.
+
+I shared the various pipelines I built, what the processed data was used for, and what impact it contributed overall to the site.
+
+At each point I also talked about the specific considerations on why certain methods were used, touching on key concepts and technologies such as - SQL, Python, Task Orchestration, server infrastructure, etc.
+
+2. You talked about scheduling, what tools do you use to manage the quality of data going into storage - for example if certain jobs rely on others, or if there are errors.
+
+I shared about the task orchestration software built in-house but based on the concepts from Airflow (so that he can relate). This includes things like tasks, plans, queues, workers, etc. And then I shared about how I use exit() codes and errors to manage the task flow. I also added how I took initiative to build my own dashboard that reads the logs from these jobs and monitor their health. Lastly, I talked about maintaining data quality by also monitoring the data being written is what is expected in terms of volume and distinct values.
+
+3. How familiar are you with cloud infrastructure like GCP/ AWS?
+
+I did not have experience, but I shared that I know the basic concepts of compute, storage, database, gateways, etc.
+
+Also added that I have experience using AWS and GCP in personal projects dealing with web scrapers.
+
+But I did not have a strong project to share, hence I did not elaborate.
+
+4. How did you learn these cloud data processing technologies?
+
+I shared about the mentorship in company, and also that I learn them by personal projects. He seemed disappointed that I did not have any certifications.
+
+I think this is an either/or kind of thing. Perhaps projects would be more impressive than having certs.
+
+5. Any questions?
+
+I asked about the tech stack that they use and interviewer shared that they use AWS's infrastructure (IaaS) like EC2 instances, but run their own in-house data architecture on it. 
+
+Their data pipelines are built in Java language on the Apache ecosystem.
+
+Data warehouse is combination of Hadoop HDFS, Hive, Spark. Theyu use Kafka Streams for real-time data and Spark for batch data. 
+
+From here I knew it was going to be tough since their in-house system is so different from what I have learned so far. 
+
+He did ask me about my undergrad backgroun in Chemical Engineering and commended that I had the ability to learn very quickly - I think I'll leverage on this point in the future.
+
+## Conclusions
+
+1. Need to know some form of cloud infrastructure for DE. This is best exemplified in a **strong, technical, ETL + frontend project** that is completely **my own idea**. Share this with interviewer and can discuss the considerations in building it.
+
+2. More often than not, companies are looking for people who already have experience in the tech stack. The current zeitgeist for DE is **Apache Hadoop/Spark** and some form of **cloud deployment**.
+
+3. DE roles can vary widely from a basic SQL analyst to a cloud architect.
+
+## To do/ Resources
 
 - [Datastax DS220 course](https://www.datastax.com/academy) covers the concepts of Data Modelling (in the context of Cassandra)
 
 - [YT Video](https://youtu.be/i7twT3x5yv8?si=ps-lbTGn1R1O6If_) covering System Design interview guide
+
+Other stuff I searched up online:
+
+- Start Data Engineering [Best Practices](https://www.startdataengineering.com/post/de_best_practices/) & [Project Template](https://www.startdataengineering.com/post/data-engineering-projects-with-free-template/)
+
+- [DE Best Practices](https://github.com/josephmachado/data_engineering_best_practices)
+
+- [Data Engineering Practice Problems](https://github.com/danielbeach/data-engineering-practice)
+
+- Sample DE project from [Reddit](https://www.reddit.com/r/dataengineering/comments/xyxpku/built_and_automated_a_complete_endtoend_elt/)
+
+- Basic questions that are dealbreakers:
+
+    How do you define structured / unstructured data?
+
+    Structured: well-formatted, predefined schema, organized into tables with rows and columns.
+    <br>
+    <br>
+    Unstructured: lacks predefined data model, often text-heavy or multimedia-rich. Require further processing/ parsing to be useful for analysis.
+
+    What makes a database relational?
+
+    - Adherence to pre-defined schemas and how each table relates to another. Non-relational databases are flexible or may not relate tables to each other.
+
+    What is OOP?
+
+    - Organise code into objects to allow modular and reusable pieces of code by function.
+
+    What is distributed processing?
+
+    - When a task is divided into subtasks that can be processed in parallel across multiple interconnected computers or nodes. Benefits of fault-tolerance, efficient resource usage, and speed.
+
+    How do you describe denormalised data?
+
+    - Redundant data is repeated across different tables for the sake of faster querying (no need so many joins), at the cost of space and consistency. E.g. Both `customer_name` and `customer_id` appear in the orders table, rather than just `customer_id`. So `orders` can be queried directly without having to `JOIN` on the `customers` table
