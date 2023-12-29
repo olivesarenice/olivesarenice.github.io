@@ -20,7 +20,7 @@ The 3 domains of improvement are:
 
 ---
 
-# TEMPLATE MONTH
+# Dec 2023
 
 ## General
 
@@ -32,7 +32,6 @@ The 3 domains of improvement are:
 
     - "How to Fight a War" by Mike Martin
     - The Italian Job
-
 
 ## Q&A
 
@@ -67,7 +66,75 @@ The 3 domains of improvement are:
 
 | Action | Reason | Details/ Updates |
 | - | - | - |
-|  |  |  | 
+| Start 2 scoops protein shake + supplements regime | NA | NA | 
+
+### Social Influence
+
+0. Rate performance in this domain: 1
+
+1. Actions I took this month 
+
+    - What I did: None, was quite isolated this month
+    - Why I did it: Did not follow through on the meetup habit after getting the new job.
+    - What it achieved: NA
+
+2. This month, I felt most excited about:
+
+    - Meeting old friends for Christmas parties
+
+3. I struggled most with action:
+
+    - Going to meetups
+
+    Because:
+
+    - I was focused on the job search and did not have the mindspace to plan these things.
+
+    To address this, I will:
+
+    - Register for meetups during my monthly review
+
+4. Planned actions for next month
+
+| Action | Reason | Details/ Updates |
+| - | - | - |
+| Go for 2 meetups in person | Kickstart habit again for networking | Already booked 2 meetups + 1 online webinar | 
+
+### Professional Skills
+
+0. Rate performance in this domain: 2
+
+1. Actions I took this month 
+
+    - What I did: Explored use of StableDiffusion interfaces for creating AI Influencers. 
+    - Why I did it: Saw a good opportunity for business using AI.
+    - What it achieved: Learned about the capabilities and limits of StableDiffusion models. Images generated not convincing enough, but the bar is relatively low still. Still deciding whether to continue pursuing it. 
+
+2. This month, I felt most excited about:
+
+    - Securing my new job
+
+3. I struggled most with action:
+
+    - Keeping up my learning, self-practice habit
+
+    Because:
+
+    - I didn't feel much excitement. Possibly because I am doing this alone, and don't have the community interest to sustain me.
+
+    To address this, I will:
+
+    - Tie in my professional skills to community meetups and sustain these relationships if I see that they are beneficial
+
+4. Planned actions for next month
+
+| Action | Reason | Details/ Updates |
+| - | - | - |
+| Set up YT app to only show curated content | Part of passive learning | Done | 
+| Set up ebooks | Part of replacing scrolling with reading | Done |
+| Set up Feedly news for important events | To keep up to date with world events | Done |
+| Start CTF'ing again | Quite a fun activity | - |
+
 
 ---
 
