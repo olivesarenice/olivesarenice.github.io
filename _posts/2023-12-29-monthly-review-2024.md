@@ -8,7 +8,7 @@ category: learning
 
 Monthly Progress Bar:
 
-[------------] (**12** months remaining)
+█▒▒▒▒▒▒▒▒▒ 8% (**11** months remaining)
 
 This post will hold my monthly reviews for the next 12 months. The form will be both a reflection for the past month and the plans for next month.
 
@@ -17,6 +17,230 @@ The 3 domains of improvement are:
 - Health, Fitness, Nutrition
 - Social Influence
 - Professional Skills
+
+---
+
+# Jan 2024
+
+## General
+
+1. This month I felt: Direction
+2. I completed these books and movies:
+
+    - **Death on the Nile**
+
+        The least engaging of the 3 Hercule Poirot movies. Interesting setup, but reveal was predicatble, CGI and acting mediocre, and situation developed too slowly. 
+    
+    - **Uncut Gems** 
+
+        Most anxiety-inducing film I've watched (that's not horror). Watch this if you feel like you need some chaos in your life.
+    
+    - **The World for Sale by Jack Farchy**
+
+        This book is about the history of commodity (oil, metals, grains, etc.) traders. It looks at how these organisations are structured and their influence on geopolitics.
+
+        3 takeaways:
+
+        - A recipe for finding lucrative markets: 
+
+                LOW REGULATION
+                        +
+                HIGH INFO ASYMMETRY
+                        +
+                CONTROL OVER PRODUCTION
+        
+        - Acknowledge the risks involved, reap the rewards, and suffer the consequences without pretending that your decision was anything more than a bet on your convictions.
+
+            > "We're speculators," says Mark Hansen, chief executive of Concord Resources, a metals trader. "We don’t apologise for the fact that we do speculatively trade. **The worst things that have happened in this industry have happened when people pretended there wasn’t a speculative element to what they were doing**."
+
+        - The most profitable (and successful) firms tend to run with a partnership model with profit-sharing incentives.
+
+            Monetary incentives (pegged to influence on net profit) are the no. 1 motivator for the actions of employees. Specifically, rewards based on quantifiable and trackable performance targets are the most effective way to get people working. 
+
+            After all, why should someone work to achieve beyond the baseline if monetary rewards are not proportional to their achievements? 
+
+            For sales, this is a commission based on % of revenue because they indirectly raise net profits via volume. For traders, this is a direct commission on % of profits.
+
+            What about roles associated with cost-reduction? Imagine an engineer who spent 4 years to create a system that, in total, reduces costs by $1,000,000 per year for 5 years (the value of their work is thus $5,000,000). They should be paid at least 20% of that value or $1,000,000. After all, the company has already reaped the remaining 80% ($4,000,000) as an increase in pure profit.
+            
+            This number includes their fixed compensation, assuming that this project was a core part of their job that were being paid for. Let's say they already earn $100,000/ year - that's $500,000 they would be compensated, and thus they should be rewarded with an extra $500,000. Of course the actual value of their work (per person) needs to consider the size of the team and other dynamics, but this model shows that rewards based on influence on net-profits can be applied to cost-cutting roles as well.
+
+    - **The First 90 Days by Michael Watkins**
+
+        This book is an onboarding guide for managers and more senior people who have less time to transition into a role and start producing value.
+
+        It was a good introduce to the approach of structuring your onboarding in the first 3 months into blocks of 30-days each. In each block, you have different goals and activities.
+
+        The whole point of doing this is to reach break-even point quickly. This is the point at which you have produced more than you have consumed - i.e. you are now a net-positive to the company.
+
+        Alot of the book is targeted to senior positions where you have an influence over the company's strategy and those below you. However, there are parts that are essential for anyone starting a new job, no matter the level:
+
+        1. Before starting a job, have a plan of what you will achieve in the next:
+
+            - Before starting
+            - Within 1st day
+            - Within 1st week
+            - Within 1st month
+
+            This plan should change as you find out more about the job over the first few weeks.
+
+        2. Things to do at onboarding (1st week)
+
+            Most of these things can be found out by talking to your boss or teammates.
+
+            - What is the business structure, priorities, profit drivers and major cost centers?
+
+            - What is the current focus of our group/ team operating in - start-up, expansion, turn-around, sustain success, etc.?
+
+            - Who/ what groups are the major influencers in the company, and how do they influence decisions (via hierarchy, expertise, profit drivers)?
+
+            - Who are the key people to connect with in my role? - arrange introductions ASAP
+
+            - Who are the stakeholders horizontal to me that can influence my work? - arrange introductions ASAP
+
+            - Who can serve as a _'cultural interpreter'_? - people who have been there long enough to know the politics, lingo.
+
+            - Set expectations and KPIs to be reviewed in 30 days. 
+
+        3. Understand the company (more)
+
+            Beyond the 1st week, also constantly look to ask about:
+
+            - Organisation history - how did certain groups, positions, processes come into place? What were the issues faced back then?
+
+            - How do the different units interact and where are the bottlenecks? - process mapping
+
+            - Further mapping of influence networks - where are the sources of power and what are their motivations, constraints, fears.
+
+        4. Negotiate success with boss
+
+            - What are the deliverables they prioritise the most - how to set up quick wins consistent with these items within first 3 months?
+
+            - Set measurable KPIs for each month and discuss them frequently
+
+            - What is their communication style - reading, diagrams, talking? frequent back-and-forth, once a week in-depth discussion, report followed by response?
+
+            -  Align resources needed to achieve expectations 
+
+        5. Consider support systems
+
+            - Form a diverse advisor network (Internal vs. External, Technical vs. Organisational)
+
+            - Set out regular sessions monthly to plan
+
+            - Defer commitment; say _"If you need an answer urgently, I have to decline. But let me look into this and get back to you"_
+
+        The overall message is to **take ownership of your own learning and success in the company; assume zero initiative from boss.**
+
+        The templates above serve as a good guide on **how** to go about this effectively.
+
+## Q&A
+### Health, Fitness, Nutrition
+0. Rate performance in this domain: 3
+
+1. Actions I took this month 
+
+    - What I did: Adhered to the nutrition plan of either protein shake or smoothie with enough protein.
+    - Why I did it: Part of the plan
+    - What it achieved: Did not feel fatigure from lack of nutrition (but from lack of sleep instead)
+
+2. This month, I felt most excited about:
+
+    - Going back to workout with friends at AFBV. Its definitely more interesting than working out alone 100% of the time
+
+3. I struggled most with action:
+
+    - Maintaining a regular gym schedule. My routine is stretching out to be 2 days rest in between on average, rather than 1 day rest.
+
+    Because:
+
+    - I did not properly plan my gym sessions, and when I did, I was usually too tired from going to office early to train properly. Still going back to the root problem of poor planning.
+
+    To address this, I will:
+
+    - Set up gym schedule at least a week in advance (put in calendar) to minimise overloading my evenings.
+
+4. Planned actions for next month
+
+| Action | Reason | Details/ Updates |
+| - | - | - |
+| Set up proper gym scheduling in calendar | To manage the amount of activities done in a single evening | Possibly involve friends at gym so I have accountability to go on those days | 
+| Continue nutrition plan | Working well, no complaints | - |
+
+### Social Influence
+0. Rate performance in this domain: 4
+
+1. Actions I took this month 
+
+    - What I did: Went for 2 (going 3) meet ups this month
+    - Why I did it: Part of the action plan to network more in the professional community
+    - What it achieved: Found an interesting and diverse community (Div0) that I would like to stick to. (see [link to post](LINK))
+
+2. This month, I felt most excited about:
+
+    - Making new friends at Div0
+
+3. I struggled most with action:
+
+    - Finding the right (influential) people to talk to during the events and picking the right conversation topic.
+
+    Because:
+
+    - Many casual, first-time members of unknown background, talking to them randomly may not be efficient use of time. (I can only engage with max 5 people per event due to limited time to network after the talks)
+
+    To address this, I will:
+
+    - Properly research attendees and prioritise highly networked people (organisers, regular volunteers).
+    - Prepare specific questions about the event, community - focus less on the talk's contents and more on the event background (especially for first time communities)
+
+4. Planned actions for next month
+
+| Action | Reason | Details/ Updates |
+| - | - | - |
+| Search for more diverse meetups for Feb (at least 2) | as part of meetup plan | Properly research the event and attendees |
+|  Settle into the Div0 community (regular), especially the international speakers and members | expand network, make friends ||
+
+### Professional Skills
+
+0. Rate performance in this domain: 2
+
+1. Actions I took this month 
+
+    - What I did: Managed to cut out and abstain from social media other than educational YT channels (this is part of the setup - Feedly, Youtube, eBooks)
+    - Why I did it: I found everything else not interesting (just distracting and time-killing).
+    - What it achieved: Watched a lot more educational content like documentaries on politics and technology. Useful even though they were not software-related. Stumbled across a video on how to start a data consultancy which was very useful.
+
+2. This month, I felt most excited about:
+
+    - Strategising and setting the foundations for a data consultancy in the future, based on the guidance of a YT video I watched.
+
+3. I struggled most with action:
+
+    - Finding time to implement the software projects that I watched on Youtube
+
+    Because:
+
+    - My evenings are usually taken up by some networking or gym, and weekends were packed. Lack of energy from waking up early to go to office as well. 
+
+    To address this, I will:
+
+    - Set up my weekends, particularly Sat and Sun mornings to these projects. Evenings on weekdays have too much going on for me to concentrate.
+
+4. Planned actions for next month
+
+| Action | Reason | Details/ Updates |
+| - | - | - |
+| Time blocking on calendar | To take out the mental work of finding a dedicated timeslot for deep work | Weekday nights = for paid work, Weekend 9am-12nn: projects/ CTF - the weekend mornings are especially important to protect | 
+
+It will look something like this:
+
+| Time | Weekdays | Sat / Sun |
+| - | - | - |
+|9am-12nn| Work |Protected project time|
+|12nn-6pm| Work |Date|
+|6pm-10pm| 2 gym sessions + 1 event + 1 paid gig (if any) / project | Family |
+
+There will be pockets of time (0.5 - 1 hours) in between which should be kept empty so that I don't overload myself.
 
 ---
 
