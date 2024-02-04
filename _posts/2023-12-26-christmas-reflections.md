@@ -180,7 +180,7 @@ What it accomplishes:
 
 # Conclusion
 
-As always, the end of year brings lots of reflection and lofty goals for the next year, most of which get dropped after January. With the [monthly review](_posts/2023-12-29-monthly-review-2024.md), I'll be able to sustain this rather than just fantasizing about it. 
+As always, the end of year brings lots of reflection and lofty goals for the next year, most of which get dropped after January. With the [monthly review]({{ site.baseurl }}{% link _posts/2023-12-29-monthly-review-2024.md %}), I'll be able to sustain this rather than just fantasizing about it. 
 
 
 
