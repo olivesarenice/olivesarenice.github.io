@@ -19,6 +19,134 @@ The 3 domains of improvement are:
 - Professional Skills
 
 ---
+# Feb 2024
+
+## General
+
+1. This month I felt: Imposter Syndrome
+2. I completed these books and movies:
+
+    - **Profit First by Mike Michalowicz** - in progress
+
+        Got the main idea: always take profit first - in business, life, whatever. Instead of putting profit as the leftover after subtracting expenses, switch it around and think of expenses at the end. 
+
+        Thus, in all activities, decide on how much profit to take and keep to it. If leftover amount for expenses is too little, then naturally you will need to increase revenue or reduce costs, but never at the sacrifice of that set profit amount. This gurantees a regular income. The actual amount of profit depends on the type and maturity of business - this is where margin % will determine the profit to take. Nevertheless, the idea is the same - profit first. This isn't just shrewd practice; it also ensures a sustainable business/ lifestyle.
+
+## Q&A
+### Health, Fitness, Nutrition
+0. Rate performance in this domain: 4
+
+1. Actions I took this month 
+
+    - What I did: Moved gym days to M, W, F right after work
+    - Why I did it: Optimise my sessions to be during my most energetic time of day and reduce travel times + less inertia since already out of house for work.
+    - What it achieved: Felt much better at gym despite lesser sleep. More consistent overall, since I take less 2-day rest periods. However, coming back late is affecting home schedule.
+
+2. This month, I felt most excited about:
+
+    - N/A, just keeping at it. 
+
+3. I struggled most with action:
+
+    - Getting enough sleep. Currently averaging 7 hours but the good range is 7.5 to 8 hours.
+
+    Because:
+
+    - I generally get home later nowadays especially with gym at night. Also have to cook most days to get higher protein meals. All these little things add up into a late night, especially when I do them last after resting after dinner.
+
+    To address this, I will:
+
+    - Do all my chores **first** - eat dinner, smoothie, clean rubbish, brush teeth, etc. once home. Only after that can I relax. So either way, when the time comes, I can always just go to bed right away.
+
+4. Planned actions for next month
+
+| Action | Reason | Details/ Updates |
+| - | - | - |
+| Frontload all chores once getting home | Reduce last minute chores before sleep | N/A |
+
+### Social Influence
+0. Rate performance in this domain: 2
+
+1. Actions I took this month 
+
+    - What I did: Went for 1 meet up this month
+    - Why I did it: Part of the action plan to network more in the professional community
+    - What it achieved: Not much, did not find many interesting meetups
+
+2. This month, I felt most excited about:
+
+    - Starting a new job - meeting young and energetic colleagues
+
+3. I struggled most with action:
+
+    - Turning small talk into meaningful (and memorable conversations)
+
+    Because:
+
+    - I get bored of small talk easily and decide to not continue the conversation usually. If the person is quiet too, usually we just don't talk.
+
+    To address this, I will:
+
+    - Aim to talk to everyone about anything - specifically, I will gamify it and aim to get these items from the conversation:
+
+        - the **why** behind something they said. e.g. what made you like _____? why did you choose to _____? 
+        
+        - what do they **really** do in their free time and more importantly **how** do they feel about it? This one is especially useful for separating people by how driven they are to pursue passions in their free time.
+
+        Important: these 2 questions shouldn't be forced. They are generic enough to be applied to any topics so use them liberally.
+
+4. Planned actions for next month
+
+| Action | Reason | Details/ Updates |
+| - | - | - |
+| Follow the gamified conversation targets | For practice | N/A |
+
+### Professional Skills
+
+0. Rate performance in this domain: 4
+
+1. Actions I took this month 
+
+    - What I did: Committed weekends and weeknights to working on projects and practicing my drone flights.
+    - Why I did it: Part of spending my time more deliberately. This is also governed by my timeblocking which seems to be effective.
+    - What it achieved: Cemented my habit of replacing gaming/ scrolling with meaningful activities. I feel more direction now (better than last time, but still a 6/10 at most - could be better)
+
+2. This month, I felt most excited about:
+
+    - Massively improving my data engineering skills to build foundations for my data consultancy.
+
+3. I struggled most with action:
+
+    - Imposter syndrome in the team.
+
+    Because:
+
+    - I did not have the formal background in tech compared to everyone else, even the interns. And also there was a clear experience and skill gap between me and the others.
+
+    To address this, I will:
+
+    - Be very efficient in my learning so that I can overtake the rest. This means documenting my work and constantly checking if I am able to explain my work (and the team's work) to others in simple terms. This comes naturally through documentation so I need to keep up with that and not get lazy.
+
+        How this will look like at work is: from say 1PM - 6PM on Friday (usually my most free day), pick a repository/ pipeline/ technology and document it fully. Describe how it works, read this description, try to poke holes in it where when I ask 'why do this?', I don't have the answer, then research and revise and repeat the questioning. This is basically the Feynman Method
+
+4. Planned actions for next month
+
+| Action | Reason | Details/ Updates |
+| - | - | - |
+| Allocate dedicated timeslots in the weekdays for self-learning (via documentation) and self-exploration (via new projects) | To speedrun my learning of the company's tech | N/A |
+| Time blocking on calendar (from prev month) | To take out the mental work of finding a dedicated timeslot for deep work | Weekday nights = for paid work, Weekend 9am-12nn: projects/ CTF - the weekend mornings are especially important to protect | 
+
+It will look something like this:
+
+| Time | Weekdays | Sat / Sun |
+| - | - | - |
+|9am-12nn| Work |Protected project time|
+|12nn-6pm| Work |Date|
+|6pm-10pm| 2 gym sessions + 1 event + 1 paid gig (if any) / project | Family |
+
+There will be pockets of time (0.5 - 1 hours) in between which should be kept empty so that I don't overload myself.
+
+---
 
 # Jan 2024
 
