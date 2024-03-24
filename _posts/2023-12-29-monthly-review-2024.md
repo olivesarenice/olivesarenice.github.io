@@ -302,7 +302,7 @@ There will be pockets of time (0.5 - 1 hours) in between which should be kept em
 
     - What I did: Went for 2 (going 3) meet ups this month
     - Why I did it: Part of the action plan to network more in the professional community
-    - What it achieved: Found an interesting and diverse community (Div0) that I would like to stick to. (see [link to post](LINK))
+    - What it achieved: Found an interesting and diverse community (Div0) that I would like to stick to.
 
 2. This month, I felt most excited about:
 
