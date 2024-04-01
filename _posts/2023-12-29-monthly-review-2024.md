@@ -8,7 +8,7 @@ category: learning
 
 Monthly Progress Bar:
 
-█▒▒▒▒▒▒▒▒▒ 8% (**11** months remaining)
+███▒▒▒▒▒▒▒ 25% (**9** months remaining)
 
 This post will hold my monthly reviews for the next 12 months. The form will be both a reflection for the past month and the plans for next month.
 
@@ -17,6 +17,131 @@ The 3 domains of improvement are:
 - Health, Fitness, Nutrition
 - Social Influence
 - Professional Skills
+---
+# Mar 2024
+
+## General
+
+1. This month I felt: Time flying by:
+
+    In the last week of March, I felt annoyed, bordeline angry while taking the train to and from work each day. People who were much younger and less privileged than me were making millions at their own businesses while here I was at 28 sweating and squeezing in a damned MRT train with hundreds of others. 
+
+    I don't want this to be the rest of my life. And then Pink Floyd's 'Time' came up on Spotify as a reminder that I must take action to avoid the things I feared the most. 
+
+    > And then one day you find ten years have got behind you. No one told you when to run. You missed the starting gun...
+
+    > The sun is the same in a relative way, but you're older. One day shorter of breath and one day closer to death...
+
+    I want to work for no one but myself. And I want to take the train on my own terms. I want to gain back control of my life. 
+
+2. I completed these books and movies:
+
+    - **Dune**
+
+    Great visuals, soundtrack, and sort of faithful to the original story. I understand that an exact adaptation would have made the movie too hard to follow. Maybe some books just aren't meant for the big screen, but Dune turned out well given the scope of the original work.
+
+## Q&A
+### Health, Fitness, Nutrition
+0. Rate performance in this domain: 3
+
+1. Actions I took this month 
+
+    - What I did: Stuck to weekly routines, got more sleep in general
+    - Why I did it: Planned from previous month
+    - What it achieved: Consistent performance at gym, no complaints.
+
+2. This month, I felt most excited about:
+
+    - N/A, just keeping at it. 
+
+3. I struggled most with action:
+
+    - N/A, smooth sailing, let's see how it goes.
+
+    Because:
+
+    - N/A
+
+    To address this, I will:
+
+    - N/A, stick with the plan, especially being disciplined with the timings.
+
+4. Planned actions for next month
+
+| Action | Reason | Details/ Updates |
+| - | - | - |
+| Frontload all chores once getting home | Reduce last minute chores before sleep (from previous month)| N/A |
+
+### Social Influence
+0. Rate performance in this domain: 3
+
+1. Actions I took this month 
+
+    - What I did: Actively met up with people I know less well and had deep conversations.
+    - Why I did it: To connect more genuinely with people and gain better networks.
+    - What it achieved: Made a close(r) friend at gym, and starting to be more open to them as well.
+
+2. This month, I felt most excited about:
+
+    - 
+
+3. I struggled most with action:
+
+    - Find enough/more people to meet, and also identifying the correct background of people to meet. 
+
+    - Being generous to people - meaning more gentlemanly. This is important for getting people to open up. 
+
+    Because:
+
+    - Not much time for meetings outside of work and don't really have a goal for meeting people (direction)
+
+    To address this, I will:
+
+    - Focus more on specific types of conversations. Since I am looking to start a business, I need more 'interview' style conversations where I can ask about people's common problems/ frustrations. This also means more professional related conversation topics. This goes back to going for meetups, but expanding the diversity of meetups.
+
+4. Planned actions for next month
+
+| Action | Reason | Details/ Updates |
+| - | - | - |
+| Follow the gamified conversation targets | For practice | N/A |
+| Focus on meetups, specifically with potential for business conversations | For more focused networking | N/A |
+| Gentlemanly motto: serve others first, don't expect to be served | Simple rule to easily be more gentlemanly | N/A |
+
+### Professional Skills
+
+0. Rate performance in this domain: 2
+1. Actions I took this month 
+
+    - What I did: Successfully implemented a complex platform at work in a short timeframe.
+    - Why I did it: Part of my initiatives at work
+    - What it achieved: Impressed my team and proved to myself that I am able to hold my own despite the (largely justified) imposter syndrome. 
+
+2. This month, I felt most excited about:
+
+    - Showcasing my work to my team. 
+
+3. I struggled most with action:
+
+    - Focus. I was jumping around from task to task and being inefficient with my time. A lot of my work hours could have spent doing self-learning but I wasted it on frivolous work, lunches, etc.
+
+    Because:
+
+    - I did not have a proper weekly/ daily work plan. I tended to push away the learning and then not do it eventually.
+
+    To address this, I will:
+    - Plan my day FIRST, so that I can do the next item (same action from last month reflection)
+
+    - Be very efficient in my learning. This means documenting my work and constantly checking if I am able to explain my work (and the team's work) to others in simple terms. This comes naturally through documentation so I need to keep up with that and not get lazy.
+
+        How this will look like at work is: from say 1PM - 6PM on Friday (usually my most free day), pick a repository/ pipeline/ technology and document it fully. Describe how it works, read this description, try to poke holes in it where when I ask 'why do this?', I don't have the answer, then research and revise and repeat the questioning. This is basically the Feynman Method
+
+4. Planned actions for next month
+
+| Action | Reason | Details/ Updates |
+| - | - | - |
+| Allocate dedicated timeslots in the weekdays for self-learning (via documentation) and self-exploration (via new projects) | To speedrun my learning of the company's tech | N/A |
+| Plan each day's task on hourly basis | To have enforce the above point on self-learning | N/A |
+
 
 ---
 # Feb 2024
