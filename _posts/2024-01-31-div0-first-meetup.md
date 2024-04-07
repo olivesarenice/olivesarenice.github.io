@@ -1,3 +1,9 @@
+---
+title: Div0 First Meetup
+tag: others
+category: learning
+---
+
 # Div0 First Meetup
 
 Over the past month, I attended 2 Div0 community meetups:
