@@ -8,7 +8,7 @@ category: learning
 
 Monthly Progress Bar:
 
-███▒▒▒▒▒▒▒ 25% (**9** months remaining)
+██████▒▒▒▒ 58% (**5** months remaining)
 
 This post will hold my monthly reviews for the next 12 months. The form will be both a reflection for the past month and the plans for next month.
 
@@ -18,6 +18,140 @@ The 3 domains of improvement are:
 - Social Influence
 - Professional Skills
 ---
+# Jul 2024
+
+## General
+
+So I have not updated my logs for the past 3 months, and I felt that it was a good time to do a bulk update having just had my birthday and turning 28 (!). On a daily basis it has felt like nothing much has changed, but on hindsight I've had many good (and bad) habits forming.
+
+1. These 3 months I felt: easily distracted.
+
+    I find myself constantly going to my phone, scrolling Instagram and Youtube, as if there wasn't anything more interesting to do. And in a way there really isn't... Things that truly matter to me - going out of the city, intense exercise, building things (that matter) all cannot be done in the short periods between my work, commute, and chores. 
+
+    I feel like if its not the phone, then what else? I struggle to find meaningful projects - everything I see around me is a first-world problem (a first-world problem in itself). Maybe my perspective isn't wide enough, or maybe I haven't talked to the right people.
+
+2. I completed these books and movies:
+
+    - **Dungeons & Dragons**
+
+    Fun movie, and doesn't take itself too seriously. Also had emotional moments that weren't diluted by Marvel-style jokes. This is what movies could be like if writers weren't so caught up trying shove politics into every story. 
+
+    - **This Is How They Tell Me The World Ends - Nicole Perlroth**
+
+    Great investigative journalism covering the escalation of cyber warfare across the globe. Doesn't cover anything that we didn't already know. But when consolidated, all these cyberattacks paint a picture of digital infrastructure that are impossible to fully protect.
+
+    - **The Fund - Rob Copeland** 
+
+    Covers the insanity happening inside Bridgewater Associates - nothing out of the ordinary for a hedge fund. What is interesting is the hypocrisy demonstrated by Ray Dalio in contrast to the Principles he preaches. It's not so much the badness of the firm, rather than the egotistical behaviour of its founder that carries through in this book.
+
+## Q&A
+### Health, Fitness, Nutrition
+0. Rate performance in this domain: 4
+
+    Health was really good recently, and I attribute it to getting regular workouts, consistent sleep, and better nutrition - especially due to my recent whole food experiment which warrants it's own section.
+
+1. Actions I took this month 
+
+    - What I did: Excluded 'unhealthy' foods from my diet for 1 month.
+    - Why I did it: My first goal was to eliminate sugar to lower diabetes risk, but the other was to increase meat consumption to increase micronutrients.
+    - What it achieved: Felt really good and strength seems to be increasing in the gym, and recovery is more consistent.
+
+2. This month, I felt most excited about:
+
+    - Continuing to exclude certain foods from my diet after seeing the positive results from my experiment.
+
+4. Details
+
+    I stopped eating food from this list for 1 month:
+
+    - Fast food (nuggets, burgers)
+    - Instant noodles (and the soup)
+    - Chips (and anything that comes in a foil bag)
+    - Any deep fried food
+    - Any form of dessert (cakes, pastries, ice cream, cookies, chocolates)
+    - Any form of sweet drinks (soft drinks, milk tea, fruit juice)
+    - Any preserved/ salted foods (sausage, bacon, ham)
+
+    And I went for these options whenever possible, both eating out and cooking at home:
+
+    - Steak, salmon, seafood
+    - Whole grains, pasta, nuts, seeds
+    - Greek yogurt, milk, butter
+
+    At first I felt really low in energy and was constantly hungry, but after a week I adapted and felt like my strength was going up and I was getting more consistent sleeps. 
+
+    At the end of the experiment, I decided that the most significant factor was dropping the refined sugar and processed foods (nitrates). For the past week I've also tried eating mostly beef (steak, mince, soups, bones) and I feel better than ever physically.
+
+    So, I'm going to continue this but relax the rules around everything except sweet foods and preserved foods. Also, if given an option, I choose beef over anything else. 
+
+### Professional Skills/ Social Influence
+
+I will drop the template for this one as I feel I am at a critical point where I need to set proper, measurable outcomes for my professional development and network. 
+
+**Context** 
+
+2 reasons why I'm doing this now:
+
+1. I have had ~6 months to familiarise myself with data infrastructure and practices in a relatively established team (benchmarked against other tech companies). Hence, it is time to consolidate this knowledge into something that I can use for myself rather than only within the company.
+2. I just lost a steady income stream that is being on retainer as a data analyst and being relegated to project-based payments. So its a perfect time to embark on expanding my consulting network.
+
+**Working Backwards**
+
+I set a goal for myself to be able to choose when, where, and how I work by the time I turn 35. The way I will do that is by becoming a data/ tech consultant for businesses and differentiating myself by offering great solutions and implementations, with great service.
+
+To do that, I need 2 things: clients and tech skills.
+
+This I've known all along, but I haven't been able to distill it down to things that can be truly measured. It has always been a case of "I feel I haven't been doing this, let's set a plan to do this everyday for the next month, etc...". The idea is there, but the results are not.
+
+**Measurements**
+
+I hate the term OKR so I'll call it by a different name - measurements.
+
+You set a numerical target, and every day you measure how far off you are from the target. There is no way to lie about how well/ badly you are doing. The question is what are the right measurements to have? Let's break it down systematically.
+
+**(1) Clients**
+
+The client acquisition pipeline is: meet many people > chat to some if they interested > sign them on to a project > complete the project with them satisfied
+
+So my metrics should be:
+
+- # of potential relevant people scoped (online, network etc.)
+- # of relevant people talked to (like really talk about their business and problems)
+- # of people who did a first consult
+- # of signed projects
+
+My goal is to hit these numbers: 300, 100, 10, 1
+
+My method of marketing should be word-of-mouth, so maintaining long-term relationships is important.
+
+**(2) Skills**
+
+On a practical note, being technicaly skilled is not as important as demonstrating that my skills can bring value to my clients.
+
+So, how do I show that my projects can either:
+
+(a) Increase client's revenue
+
+- Targeted analytics for better marketing and customer acquisition
+- Enable a business offering by providing data
+
+(b) Decrease their costs
+
+- Reducing time spent on repetitive work
+- Producing a piece of work that must be done at a lower cost but same quality
+
+From here on, all my side-projects (even if done for fun) should focus on use-cases that fulfill these criteria, rather than projects without a monetary value attached.
+
+**Actions**
+
+I need to focus on expanding my circle of potential clients so the immediate actions are:
+
+- Talk to anyone who remotely has a connection to these kinds of businesses/ individuals that need data help
+- Identify what is the easiest niche to break into - although I know it is the small business space, I need to find an ideal customer profile and target them.
+- Track these measurements, at least on the upstream for now (# of relevant people scoped out + # of people talked to)
+
+I will need to mull over this for a few days ...
+
 # Mar 2024
 
 ## General
